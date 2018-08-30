@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 import { TodoListItemModel } from './todolist-item.model';
 
 @Component({
@@ -11,8 +13,17 @@ export class AppComponent {
     new TodoListItemModel('Item 1', new Date().toString(), false),
     new TodoListItemModel('Item 2', new Date().toString(), false)
   ];
+  
   title = 'Todo List';
   constructor() {
+    
+  }
+
+  onTodoFormSubmit(form: NgForm) {
+    const todoItemName = form.value.todoItem;
+    const newTodoItem = new TodoListItemModel(todoItemName, new Date().toString(), false);
+    this.todoListItems.push(newTodoItem);
+    form.reset();
     
   }
 }
