@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoListItemModel } from './todolist-item.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  todoListItems: TodoListItemModel[] = [
+    new TodoListItemModel('Item 1', new Date().toString(), false),
+    new TodoListItemModel('Item 2', new Date().toString(), false)
+  ];
+  title = 'Todo List';
+  constructor() {
+    
+  }
 }
