@@ -4,6 +4,7 @@
   </div>
   <hr>
   <div class="row">
+      {{todoForm.value | json}}
       <form #todoForm = "ngForm" (ngSubmit)="onTodoFormSubmit(todoForm)" class="form-inline">
           <div class="form-group col-xs-10">
             <input 
@@ -24,23 +25,9 @@
   </div>
   <hr>
   <div class="row">
-    <div class="list-group" *ngFor = "let todoListItem of todoListItems">
-      <a href="" class="list-group-item col-xs-12">
-        <div class="pull-left">
-            <h4 class="list-group-item-heading">{{todoListItem.name}}</h4>
-            <p class="list-group-item-text">Added on: {{todoListItem.addedOn | date}}</p>      
-        </div>
-
-        <div class="pull-right btn-group" *ngIf = "!todoListItem.completed">
-          <button class="btn btn-default">
-              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-          </button>
-          <button class="btn btn-default">
-              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-          </button>
-        </div>
-        <div class="clearfix"></div>
-      </a>
-    </div>
+    <app-todo-item  
+      *ngFor = "let todoListItem of todoListItems"
+      [todoItem] = "todoListItem"
+    ></app-todo-item>
   </div>
 </div>
