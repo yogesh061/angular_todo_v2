@@ -1,0 +1,17 @@
+<form #todoForm = "ngForm" (ngSubmit)="onTodoFormSubmit(todoForm)" class="form-inline">
+    <div class="form-group col-xs-10">
+      <input 
+        type="text" 
+        style="width:100%" 
+        class="form-control" 
+        placeholder="Add item"  
+        name="todoItem" 
+        ngModel
+        required
+        autocomplete="off">
+    </div>
+    <button 
+      type="submit" 
+      class="btn btn-primary col-xs-2"
+      [disabled]="!todoForm.valid">Add</button>
+</form>
