@@ -20,10 +20,8 @@ export class AppComponent {
   constructor() {
   }
 
-  onTodoFormSubmit(form: NgForm) {
-    const todoItemName = form.value.todoItem;
-    const newTodoItem = new TodoListItemModel(++this.lastTodoId, todoItemName, new Date().toString(), false);
+  onItemAdded(todoItem) {
+    const newTodoItem = new TodoListItemModel(++this.lastTodoId, todoItem, new Date().toString(), false);
     this.todoListItems.push(newTodoItem);
-    form.reset();
   }
 }

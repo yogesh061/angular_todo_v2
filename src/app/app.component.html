@@ -4,7 +4,7 @@
   </div>
   <hr>
   <div class="row">
-      <app-add-todo-item></app-add-todo-item>
+      <app-add-todo-item (itemAdded) = "onItemAdded($event)"></app-add-todo-item>
   </div>
   <hr>
   <div class="row">
