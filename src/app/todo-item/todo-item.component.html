@@ -1,20 +1,17 @@
 <div class="list-group">
-  <a href="#" class="list-group-item col-xs-12">
+  <div href="#" class="list-group-item col-xs-12">
     <div class="pull-left">
       <h4 class="list-group-item-heading">{{todoItem.name}}</h4>
       <p class="list-group-item-text">Added on: {{todoItem.addedOn | date}}</p>
     </div>
     <div class="pull-right btn-group" *ngIf="!todoItem.completed">
-      <button class="btn btn-primary">
-        <span class="glyphicon glyphicon-ok" aria-hidden="true" (click)="onMarkComplete()"></span>
+      <button class="btn btn-primary" (click)="onMarkComplete()">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
       </button>
-      <button class="btn btn-default">
-        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-      </button>
-      <button class="btn btn-danger">
-        <span class="glyphicon glyphicon-trash" aria-hidden="true" (click)="onDelete()"></span>
+      <button class="btn btn-danger" (click)="onDelete()">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
       </button>
     </div>
     <div class="clearfix"></div>
-  </a>
+  </div>
 </div>
