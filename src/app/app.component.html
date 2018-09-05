@@ -4,13 +4,15 @@
   </div>
   <hr>
   <div class="row">
-      <app-add-todo-item (itemAdded) = "onItemAdded($event)"></app-add-todo-item>
+      <app-add-todo-item (itemAdded) = "onAddItem($event)"></app-add-todo-item>
   </div>
   <hr>
   <div class="row">
     <app-todo-item  
       *ngFor = "let todoListItem of todoListItems"
       [todoItem] = "todoListItem"
+      (completeItem) = "onMarkComplete($event)"
+      (deleteItem)="onDeleteItem($event)"
     ></app-todo-item>
   </div>
 </div>

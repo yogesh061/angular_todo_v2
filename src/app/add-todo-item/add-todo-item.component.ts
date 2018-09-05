@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class AddTodoItemComponent implements OnInit {
 
-  @Output() itemAdded = new EventEmitter();
+  @Output() itemAdded: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 

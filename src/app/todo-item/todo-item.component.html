@@ -6,13 +6,13 @@
     </div>
     <div class="pull-right btn-group" *ngIf="!todoItem.completed">
       <button class="btn btn-primary">
-        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-ok" aria-hidden="true" (click)="onMarkComplete()"></span>
       </button>
       <button class="btn btn-default">
         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
       </button>
       <button class="btn btn-danger">
-        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-trash" aria-hidden="true" (click)="onDelete()"></span>
       </button>
     </div>
     <div class="clearfix"></div>

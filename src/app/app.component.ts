@@ -20,8 +20,22 @@ export class AppComponent {
   constructor() {
   }
 
-  onItemAdded(todoItem) {
+  onAddItem(todoItem: string) {
     const newTodoItem = new TodoListItemModel(++this.lastTodoId, todoItem, new Date().toString(), false);
     this.todoListItems.push(newTodoItem);
   }
+
+  onDeleteItem(itemId: number) {
+    console.log(itemId);
+    const updatedList = this.todoListItems.filter(item => (item.todoId !== itemId));
+    this.todoListItems = updatedList.slice();
+  }
+
+  onMarkComplete(itemId: number) {
+    console.log(itemId);
+    const updatedItemIndex: number = this.todoListItems.findIndex(item => itemId === item.todoId);
+    this.todoListItems[updatedItemIndex].completed = true;
+  }
+
+
 }
